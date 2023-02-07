@@ -1,19 +1,24 @@
 var mesAtual = 'janeiro';
+var entradas = 8000;
+var saidas = 400;
+var saldo = 1000;
+var salario = 8000;
+var alimentacao = 8000;
 
 // Mês
 document.getElementById('month').innerHTML = mesAtual;
 
 // Entradas
-document.getElementById('total-earnings').innerHTML = 2000;
+document.getElementById('total-earnings').innerHTML = entradas;
 
 // Saídas
-document.getElementById('total-expenses').innerHTML = 1800;
+document.getElementById('total-expenses').innerHTML = saidas;
 
 // Saldo
-document.getElementById('final-balance').innerHTML = 200;
+document.getElementById('final-balance').innerHTML = saldo;
 
 // Minha receita: Salário
-document.getElementById('salary').innerHTML = 2000;
+document.getElementById('salary').innerHTML = salario;
 
 // Meus gastos: Alimentação
-document.getElementById('food').innerHTML = 200;
+document.getElementById('food').innerHTML = alimentacao;
