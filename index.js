@@ -2,8 +2,11 @@ var mesAtual = 'janeiro';
 var entradas = 8000;
 var saidas = 400;
 var saldo = 1000;
-var salario = 8000;
-var alimentacao = 8000;
+var salario = {
+  description: 'Salário',
+  value: 4000,
+};
+var alimentacao = 800;
 
 // Mês
 document.getElementById('month').innerHTML = mesAtual;
@@ -18,7 +21,9 @@ document.getElementById('total-expenses').innerHTML = saidas;
 document.getElementById('final-balance').innerHTML = saldo;
 
 // Minha receita: Salário
-document.getElementById('salary').innerHTML = salario;
+document.getElementById(
+  'salary'
+).innerHTML = `${salario.description}: R$ ${salario.value}`;
 
 // Meus gastos: Alimentação
 document.getElementById('food').innerHTML = alimentacao;
