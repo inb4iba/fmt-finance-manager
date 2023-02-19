@@ -1,6 +1,12 @@
-## Finance Manager
+# Finance Manager
 
 Aplicativo para gestão de finanças criado juntamento com a turma Itacorubi do projeto LAB365.
+
+## Features
+
+- Visualizar tabelas de receitas e gastos
+- Visualizar indicadores de entradas, saídas e saldo final
+- Adicionar despesas e gastos
 
 ## Tecnologias
 

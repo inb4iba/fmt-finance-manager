@@ -6,10 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meus gastos</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./FormModal/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="header">
       <h1>Meu saldo de <span id="month"></span></h1>
+      <button id="open-modal-button">Adicionar movimentação</button>
+
+      <!-- The Modal -->
+      <div id="form-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="input-wrapper">
+            <label for="description"><b>Descrição</b></label>
+            <input
+              type="text"
+              placeholder="Escreva"
+              name="description"
+              id="description-input"
+              required
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="value"><b>Valor</b></label>
+            <input
+              type="number"
+              placeholder="50"
+              name="value"
+              id="value-input"
+              required
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <fieldset id="movement-type-fieldset">
+              <legend>Essa movimentação financeira é</legend>
+
+              <div>
+                <input
+                  type="radio"
+                  id="earning-radio"
+                  name="movement-type"
+                  value="earning-radio"
+                  checked
+                />
+                <label for="earning-radio">Entrada</label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  id="expense-radio"
+                  name="movement-type"
+                  value="expense-radio"
+                />
+                <label for="expense-radio">Saída</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button
+            type="submit"
+            onclick="addFinancialMovement()"
+            id="add-new-financial-movement-button"
+            class="add-new-financial-movement-button"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="indicators">
@@ -40,5 +113,6 @@
     </div>
 
     <script src="./index.js"></script>
+    <script src="./FormModal/index.js"></script>
   </body>
 </html>
