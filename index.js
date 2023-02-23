@@ -20,7 +20,7 @@ var mesAtual = monthNames[new Date().getMonth()];
 // Mês
 document.getElementById('month').innerHTML = mesAtual;
 
-class FinancialMovement {
+class FinancialTransaction {
   description;
   value;
 
@@ -30,7 +30,7 @@ class FinancialMovement {
   }
 }
 
-class FinancialMovements {
+class FinancialTransactionsManager {
   expensesList;
   earningsList;
   #totalEarnings = 0;
@@ -56,16 +56,22 @@ class FinancialMovements {
   }
 
   addEarning(description, value) {
-    const addedFinancialMovement = new FinancialMovement(description, value);
-    this.earningsList.push(addedFinancialMovement);
-    this.updateScreen(addedFinancialMovement, 'earnings-list');
+    const addedFinancialTransaction = new FinancialTransaction(
+      description,
+      value
+    );
+    this.earningsList.push(addedFinancialTransaction);
+    this.updateScreen(addedFinancialTransaction, 'earnings-list');
     this.clearInputs();
   }
 
   addExpense(description, value) {
-    const addedFinancialMovement = new FinancialMovement(description, value);
-    this.expensesList.push(addedFinancialMovement);
-    this.updateScreen(addedFinancialMovement, 'expenses-list');
+    const addedFinancialTransaction = new FinancialTransaction(
+      description,
+      value
+    );
+    this.expensesList.push(addedFinancialTransaction);
+    this.updateScreen(addedFinancialTransaction, 'expenses-list');
     this.clearInputs();
   }
 
@@ -113,15 +119,21 @@ class FinancialMovements {
   }
 }
 
-const myFinancialMovements = new FinancialMovements();
+const financialTransactionsManager = new FinancialTransactionsManager();
 
-function addFinancialMovement() {
+function addFinancialTransaction() {
   const earningRadioValueIsChecked =
     document.getElementById('earning-radio').checked;
 
   if (earningRadioValueIsChecked) {
-    myFinancialMovements.addEarning(descriptionInput.value, valueInput.value);
+    financialTransactionsManager.addEarning(
+      descriptionInput.value,
+      valueInput.value
+    );
   } else {
-    myFinancialMovements.addExpense(descriptionInput.value, valueInput.value);
+    financialTransactionsManager.addExpense(
+      descriptionInput.value,
+      valueInput.value
+    );
   }
 }
