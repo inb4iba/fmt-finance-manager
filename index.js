@@ -1,24 +1,24 @@
 const monthNames = [
-  'janeiro',
-  'fevereiro',
-  'março',
-  'abril',
-  'maio',
-  'junho',
-  'julho',
-  'agosto',
-  'setembro',
-  'outubro',
-  'novembro',
-  'dezembro',
+  "janeiro",
+  "fevereiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
 ];
-const descriptionInput = document.getElementById('description-input');
-const valueInput = document.getElementById('value-input');
+const descriptionInput = document.getElementById("description-input");
+const valueInput = document.getElementById("value-input");
 
 var mesAtual = monthNames[new Date().getMonth()];
 
 // Mês
-document.getElementById('month').innerHTML = mesAtual;
+document.getElementById("month").innerHTML = mesAtual;
 
 class FinancialTransaction {
   description;
@@ -46,10 +46,10 @@ class FinancialTransactionsManager {
 
   createScreen() {
     if (this.expensesList > 0) {
-      this.createHtmlListFromArray(this.expensesList, 'expenses-list');
+      this.createHtmlListFromArray(this.expensesList, "expenses-list");
     }
     if (this.earningsList > 0) {
-      this.createHtmlListFromArray(this.earningsList, 'earnings-list');
+      this.createHtmlListFromArray(this.earningsList, "earnings-list");
     }
 
     this.updateIndicators();
@@ -61,7 +61,7 @@ class FinancialTransactionsManager {
       value
     );
     this.earningsList.push(addedFinancialTransaction);
-    this.updateScreen(addedFinancialTransaction, 'earnings-list');
+    this.updateScreen(addedFinancialTransaction, "earnings-list");
     this.clearInputs();
   }
 
@@ -71,7 +71,7 @@ class FinancialTransactionsManager {
       value
     );
     this.expensesList.push(addedFinancialTransaction);
-    this.updateScreen(addedFinancialTransaction, 'expenses-list');
+    this.updateScreen(addedFinancialTransaction, "expenses-list");
     this.clearInputs();
   }
 
@@ -95,9 +95,9 @@ class FinancialTransactionsManager {
 
     this.#finalBalance = this.#totalEarnings - this.#totalExpenses;
 
-    document.getElementById('final-balance').innerHTML = this.#finalBalance;
-    document.getElementById('total-expenses').innerHTML = this.#totalExpenses;
-    document.getElementById('total-earnings').innerHTML = this.#totalEarnings;
+    document.getElementById("final-balance").innerHTML = this.#finalBalance;
+    document.getElementById("total-expenses").innerHTML = this.#totalExpenses;
+    document.getElementById("total-earnings").innerHTML = this.#totalEarnings;
   }
 
   createHtmlListFromArray(objectsArray, listElementId) {
@@ -107,14 +107,14 @@ class FinancialTransactionsManager {
   }
 
   createListItem(object, listElementId) {
-    var li = document.createElement('li');
+    var li = document.createElement("li");
     li.innerText = `${object.description}: R$ ${object.value}`;
 
     document.getElementById(listElementId).appendChild(li);
   }
 
   clearInputs() {
-    descriptionInput.value = '';
+    descriptionInput.value = "";
     valueInput.value = undefined;
   }
 }
@@ -123,7 +123,7 @@ const financialTransactionsManager = new FinancialTransactionsManager();
 
 function addFinancialTransaction() {
   const earningRadioValueIsChecked =
-    document.getElementById('earning-radio').checked;
+    document.getElementById("earning-radio").checked;
 
   if (earningRadioValueIsChecked) {
     financialTransactionsManager.addEarning(
