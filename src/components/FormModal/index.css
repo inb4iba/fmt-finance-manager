@@ -1,13 +1,19 @@
 /* open modal button */
-#open-modal-button {
+#open-modal-button,
+.button {
   border: none;
   outline: none;
   background-color: #04aa6d;
   color: #fff;
   font-weight: 500;
+  font-size: 0.9rem;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* The Modal (background) */
@@ -71,8 +77,8 @@ label {
 }
 
 /* Full-width input fields */
-input[type='text'],
-input[type='number'] {
+input[type="text"],
+input[type="number"] {
   width: 90%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -81,8 +87,8 @@ input[type='number'] {
   background: #f1f1f1;
 }
 
-input[type='text']:focus,
-input[type='number']:focus {
+input[type="text"]:focus,
+input[type="number"]:focus {
   background-color: #ddd;
   outline: none;
 }

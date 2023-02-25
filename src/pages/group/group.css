@@ -1,0 +1,39 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.table {
+  width: 90%;
+  margin: auto;
+}
+
+.table .row:first-child {
+  text-align: center;
+}
+
+.table .row:not(:last-child),
+.table .row:first-child {
+  border-bottom: 1px solid white;
+}
+
+.row {
+  display: flex;
+  color: white;
+  width: 100%;
+}
+
+.row div {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.row > div:nth-child(2) {
+  border-inline: 1px solid white;
+}
+
+.row:not(:first-child) > div:not(:first-child) {
+  text-align: end;
+}
