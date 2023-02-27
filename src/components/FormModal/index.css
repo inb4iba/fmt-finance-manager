@@ -1,6 +1,5 @@
 /* open modal button */
-#open-modal-button,
-.button {
+#open-modal-button {
   border: none;
   outline: none;
   background-color: #04aa6d;
@@ -19,12 +18,15 @@
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  position: absolute; /* Stay in place */
+  justify-content: center;
+  align-items: center;
   z-index: 1; /* Sit on top */
-  left: 0;
+  inset: 1;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
@@ -37,7 +39,6 @@
   align-items: center;
   justify-content: center;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
   padding: 1rem;
   width: 60%; /* Could be more or less, depending on screen size */
 }

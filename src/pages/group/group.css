@@ -8,15 +8,14 @@ main {
 .table {
   width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.table .row:first-child {
-  text-align: center;
-}
-
-.table .row:not(:last-child),
-.table .row:first-child {
-  border-bottom: 1px solid white;
+.table .row:not(:first-child) {
+  background-color: #0005;
+  border-radius: 0.25rem;
 }
 
 .row {
@@ -25,15 +24,14 @@ main {
   width: 100%;
 }
 
-.row div {
-  width: 100%;
+.row div:first-child {
+  width: 60%;
   padding: 0.5rem 1rem;
+  text-align: start;
 }
 
-.row > div:nth-child(2) {
-  border-inline: 1px solid white;
-}
-
-.row:not(:first-child) > div:not(:first-child) {
-  text-align: end;
+.row div:not(:first-child) {
+  width: 20%;
+  padding: 0.5rem 1rem;
+  text-align: center;
 }

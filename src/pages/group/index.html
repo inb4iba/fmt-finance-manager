@@ -17,21 +17,72 @@
   </head>
   <body>
     <header class="header">
-      <a class="button" href="../index.html">Voltar</a>
+      <a class="page-link" href="../index.html"
+        ><img src="../../assets/arrow.svg" alt="" />Despesa Individual</a
+      >
       <h1>Despesa em grupo</h1>
       <button id="open-modal-button">Despesa em grupo</button>
+
+      <!-- The Modal -->
+      <div id="form-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="input-wrapper">
+            <label for="title"><b>Título</b></label>
+            <input
+              type="text"
+              placeholder="Escreva"
+              name="title"
+              id="title-input"
+              required
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="participants"><b>Participantes</b></label>
+            <input
+              type="number"
+              placeholder="5"
+              name="participants"
+              id="participants-input"
+              required
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="amount"><b>Valor</b></label>
+            <input
+              type="number"
+              placeholder="50"
+              name="amount"
+              id="amount-input"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            onclick="addGroupExpense()"
+            id="add-new-group-expense-button"
+            class="add-new-financial-movement-button"
+          >
+            Adicionar
+          </button>
+        </div>
+      </div>
     </header>
 
     <main>
       <div class="table" id="group-expenses">
         <div class="row">
           <div>Descrição</div>
-          <div>Valor individual</div>
+          <div>Minha Parte</div>
           <div>Valor Total</div>
         </div>
       </div>
     </main>
 
     <script type="module" src="group.js"></script>
+    <script type="module" src="../../components/FormModal/index.js"></script>
   </body>
 </html>
