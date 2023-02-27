@@ -1,5 +1,5 @@
-import { GroupExpenses } from "../../classes/GroupExpenses.js";
-import { closeModal } from "../../components/FormModal/index.js";
+import { GroupExpenses } from "../classes/GroupExpenses.js";
+import { closeModal } from "../components/FormModal/index.js";
 
 const table = document.getElementById("group-expenses");
 
